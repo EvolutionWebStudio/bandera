@@ -2,54 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76742724-3810-474e-b143-80ed649e5746" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\.project" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\apple-touch-icon-114x114-precomposed.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\apple-touch-icon-144x144-precomposed.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\apple-touch-icon-57x57-precomposed.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\apple-touch-icon-72x72-precomposed.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\apple-touch-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\css\admin_main.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\TOC.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\crossdomain.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\css.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\extend.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\faq.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\html.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\js.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\misc.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\doc\usage.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\js\vendor\jquery-1.9.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\Bandera\js\vendor\jquery.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apple-touch-icon-precomposed.png" afterPath="$PROJECT_DIR$/apple-touch-icon-precomposed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.alerts.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.alerts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.clearing.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.clearing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/foundation.css" afterPath="$PROJECT_DIR$/css/foundation.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.dropdown.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.dropdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.forms.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.forms.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.interchange.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.interchange.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.joyride.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.joyride.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.magellan.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.magellan.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/foundation.min.css" afterPath="$PROJECT_DIR$/css/foundation.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation.min.js" afterPath="$PROJECT_DIR$/js/foundation.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.orbit.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.orbit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.placeholder.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.placeholder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.reveal.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.reveal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.section.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.section.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.tooltips.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.tooltips.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/foundation/foundation.topbar.js" afterPath="$PROJECT_DIR$/js/foundation/foundation.topbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/normalize.css" afterPath="$PROJECT_DIR$/css/normalize.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/vendor/zepto.js" afterPath="$PROJECT_DIR$/js/vendor/zepto.js" />
     </list>
     <ignored path="Bandera.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -288,12 +241,18 @@
       <created>1384535782985</created>
       <updated>1384535782985</updated>
     </task>
+    <task id="LOCAL-00001" summary="#1 Instalirati Yii za inicijelni commit">
+      <created>1384545287077</created>
+      <updated>1384545287077</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -321,6 +280,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="#1 Instalirati Yii za inicijelni commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="#1 Instalirati Yii za inicijelni commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
