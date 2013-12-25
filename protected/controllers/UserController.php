@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'login', 'register'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -170,4 +170,58 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function actionRegister()
+    {
+        $model=new User('register');
+
+        // uncomment the following code to enable ajax-based validation
+        /*
+        if(isset($_POST['ajax']) && $_POST['ajax']==='user-user_register-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+        */
+
+        if(isset($_POST['User']))
+        {
+            $model->attributes=$_POST['User'];
+            $model->registration_date = date('Y-m-d h:m:s');
+            $model->last_activity = date('Y-m-d h:m:s');
+            $model->user_roll_id = UserRoll::ROLE_REGISTERED;
+            if($model->validate())
+            {
+                $model->save();
+
+                $this->redirect('login');
+            }
+        }
+        $this->render('user_register',array('model'=>$model));
+    }
+
+    public function actionLogin()
+    {
+        $model=new User('login');
+
+        // uncomment the following code to enable ajax-based validation
+        /*
+        if(isset($_POST['ajax']) && $_POST['ajax']==='user-user_login-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+        */
+
+        if(isset($_POST['User']))
+        {
+            $model->attributes=$_POST['User'];
+            if($model->validate())
+            {
+                // form inputs are valid, do something here
+                return;
+            }
+        }
+        $this->render('user_login',array('model'=>$model));
+    }
 }

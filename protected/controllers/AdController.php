@@ -170,4 +170,12 @@ class AdController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    protected function actionLista_oglasa()
+    {
+        $adds = Ad::model()->findAll();
+        $this->render('lista',array(
+            'adds'=>$adds,
+        ));
+    }
 }
