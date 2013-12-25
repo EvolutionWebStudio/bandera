@@ -96,7 +96,9 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+body {
+    font-family: "Open Sans", sans-serif;
+}
 nav ul {
     margin: 0;
     list-style: none;
@@ -104,13 +106,20 @@ nav ul {
     nav ul li {
         display: inline-block;
     }
+h1 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+}
 
 /* HEADER */
 
 .main-header {
     padding-top: 20px;
 }
-
 .main-menu {
     text-align: right;
 }
@@ -127,6 +136,25 @@ nav ul {
     box-shadow: 0 0 2px #666;
     border-radius: 3px;
 }
+.main-content {
+    padding-top: 20px;
+}
+
+/* -- ADS LIST */
+
+.offers-list {
+
+}
+.offers-item {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: 1px solid #999;
+    box-shadow: 0 0 2px #666;
+}
+    .offers-item .item-description {
+        margin-top: .5rem;
+        font-size: .9rem;
+    }
 
 /* FOOTER */
 
