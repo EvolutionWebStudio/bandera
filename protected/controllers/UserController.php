@@ -32,7 +32,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update', 'logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -190,11 +190,21 @@ class UserController extends Controller
             $model->registration_date = date('Y-m-d h:m:s');
             $model->last_activity = date('Y-m-d h:m:s');
             $model->user_roll_id = UserRoll::ROLE_REGISTERED;
+            $model->password = md5($model->password);
+            $model->repeat_password = md5($model->repeat_password);
             if($model->validate())
             {
-                $model->save();
+                if(!$model->save())
+                    print_r($model);
+                $mail = new YiiMailer();
+                $mail->setFrom('goolub_igor@gmail', 'Igor Golub');
+                $mail->setTo($model->email);
+                $mail->setSubject('Potvrdi registraciju!');
+                $mail->setBody('Ako hoces da se registrujes klikni na link');
+                if(!$mail->send())
+                    $this->redirect('login');
 
-                $this->redirect('login');
+
             }
         }
         $this->render('user_register',array('model'=>$model));
@@ -202,7 +212,7 @@ class UserController extends Controller
 
     public function actionLogin()
     {
-        $model=new User('login');
+        $model=new LoginForm();
 
         // uncomment the following code to enable ajax-based validation
         /*
@@ -213,15 +223,22 @@ class UserController extends Controller
         }
         */
 
-        if(isset($_POST['User']))
+        if(isset($_POST['LoginForm']))
         {
-            $model->attributes=$_POST['User'];
+            $model->attributes=$_POST['LoginForm'];
+
             if($model->validate())
             {
-                // form inputs are valid, do something here
-                return;
+                if($model->validate() && $model->login())
+                    $this->redirect($this->createUrl('site/index'));
             }
         }
         $this->render('user_login',array('model'=>$model));
+    }
+
+    public function actionLogout()
+    {
+        Yii::app()->user->logout();
+        $this->redirect(Yii::app()->homeUrl);
     }
 }

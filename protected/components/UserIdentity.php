@@ -17,7 +17,7 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-        $user = Users::model()->getUser($this->username, $this->password);
+        $user = User::model()->getUser($this->username, $this->password);
 
         if ($user == null)
         {
@@ -26,11 +26,9 @@ class UserIdentity extends CUserIdentity
         }
         else
         {
-            Yii::app()->session['id'] = $user->usId;
-            Yii::app()->session['level'] = $user->privilegeLevel;
-            Yii::app()->session['fullname'] = $user->realName + " " + $user->realSurname;
-
-            Config::model()->setLoginedByUserId($user->usId);
+            Yii::app()->session['id'] = $user->id;
+            Yii::app()->session['level'] = $user->user_roll_id;
+            Yii::app()->session['fullname'] = $user->name_surname;
 
             $this->errorCode = self::ERROR_NONE;
             return true;
