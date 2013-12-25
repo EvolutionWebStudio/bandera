@@ -1,8 +1,8 @@
-# Include your project-specific ignores in this file
 
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-
-
-.idea
-.idea/*
-.idea
+/assets
+/index.php
+/.idea
+/protected/runtime
+/protected/config/main.golub.php
+/protected/config/main.ilija.php
+/protected/config/console.php
