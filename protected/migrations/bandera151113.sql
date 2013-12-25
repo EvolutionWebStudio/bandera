@@ -72,6 +72,17 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `bandera`.`user_roll`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `bandera`.`user_roll` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NULL ,
+  `description` VARCHAR(255) NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `bandera`.`user`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `bandera`.`user` (
@@ -86,11 +97,18 @@ CREATE  TABLE IF NOT EXISTS `bandera`.`user` (
   `city_ptt` INT NOT NULL ,
   `email` VARCHAR(255) NULL ,
   `phone` VARCHAR(45) NULL ,
+  `user_roll_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_user_sity1_idx` (`city_ptt` ASC) ,
+  INDEX `fk_user_user_roll1_idx` (`user_roll_id` ASC) ,
   CONSTRAINT `fk_user_sity1`
     FOREIGN KEY (`city_ptt` )
     REFERENCES `bandera`.`city` (`ptt` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_user_roll1`
+    FOREIGN KEY (`user_roll_id` )
+    REFERENCES `bandera`.`user_roll` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
