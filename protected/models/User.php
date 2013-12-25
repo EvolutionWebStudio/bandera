@@ -15,6 +15,7 @@
  * @property integer $city_ptt
  * @property string $email
  * @property string $phone
+ * @property integer $user_roll_id
  *
  * The followings are the available model relations:
  * @property City $cityPtt
@@ -39,7 +40,7 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('city_ptt', 'required'),
-			array('premium, city_ptt', 'numerical', 'integerOnly'=>true),
+			array('premium, city_ptt, user_roll_id', 'numerical', 'integerOnly'=>true),
 			array('username, password', 'length', 'max'=>120),
 			array('name_surname', 'length', 'max'=>180),
 			array('avatar, email', 'length', 'max'=>255),
@@ -47,7 +48,7 @@ class User extends CActiveRecord
 			array('registration_date, last_activity', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, name_surname, registration_date, last_activity, premium, avatar, city_ptt, email, phone', 'safe', 'on'=>'search'),
+			array('id, username, password, name_surname, registration_date, last_activity, premium, avatar, city_ptt, email, phone, user_roll_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -81,6 +82,7 @@ class User extends CActiveRecord
 			'city_ptt' => 'Mjesto stanovanja',
 			'email' => 'Email',
 			'phone' => 'Telefon',
+            'user_roll_id' => 'Uloga',
 		);
 	}
 
@@ -113,6 +115,8 @@ class User extends CActiveRecord
 		$criteria->compare('city_ptt',$this->city_ptt);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('user_roll_id',$this->user_roll_id,true);
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

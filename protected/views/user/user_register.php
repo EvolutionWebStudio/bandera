@@ -19,15 +19,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-        <?php echo $form->labelEx($model,'city_ptt'); ?>
-        <?php
-        $list = CHtml::listData(City::model()->findAll(), 'ptt', 'name'); //table_col_name1 is value of option, table_col_name2 is label of option
-        // echo $form->dropDownList($model, 'product_type_id', $list);
-        echo CHtml::dropDownList('city_ptt', $model, $list);
-        ?>
-        <?php echo $form->error($model,'city_ptt'); ?>
-	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
@@ -41,17 +33,9 @@
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'name_surname'); ?>
-		<?php echo $form->textField($model,'name_surname'); ?>
-		<?php echo $form->error($model,'name_surname'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'avatar'); ?>
-		<?php echo $form->textField($model,'avatar'); ?>
-		<?php echo $form->error($model,'avatar'); ?>
-	</div>
+
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
@@ -59,11 +43,7 @@
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'phone'); ?>
-		<?php echo $form->textField($model,'phone'); ?>
-		<?php echo $form->error($model,'phone'); ?>
-	</div>
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Submit'); ?>

@@ -187,10 +187,14 @@ class UserController extends Controller
         if(isset($_POST['User']))
         {
             $model->attributes=$_POST['User'];
+            $model->registration_date = date('Y-m-d h:m:s');
+            $model->last_activity = date('Y-m-d h:m:s');
+            $model->user_roll_id = UserRoll::ROLE_REGISTERED;
             if($model->validate())
             {
-                // form inputs are valid, do something here
-                return;
+                $model->save();
+
+                $this->redirect('login');
             }
         }
         $this->render('user_register',array('model'=>$model));
