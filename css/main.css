@@ -97,11 +97,51 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+nav ul {
+    margin: 0;
+    list-style: none;
+}
+    nav ul li {
+        display: inline-block;
+    }
 
+/* HEADER */
 
+.main-header {
+    padding-top: 20px;
+}
 
+.main-menu {
+    text-align: right;
+}
+    .main-menu ul {
+        display: inline-block;
+    }
 
+/* CONTENT */
 
+.map {
+    height: 500px;
+
+    border: 5px solid #fff;
+    box-shadow: 0 0 2px #666;
+    border-radius: 3px;
+}
+
+/* FOOTER */
+
+.main-footer {
+    text-align: center;
+}
+.footer-menu {
+    margin-top: 15px;
+}
+    .footer-menu li {
+        padding: 0 .2rem;
+    }
+.copyright {
+    font-size: 0.9rem;
+}
 
 
 
