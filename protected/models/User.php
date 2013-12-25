@@ -71,16 +71,16 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => 'Username',
-			'password' => 'Password',
-			'name_surname' => 'Name Surname',
+			'username' => 'Korisničko ime',
+			'password' => 'Lozinka',
+			'name_surname' => 'Ime i prezime',
 			'registration_date' => 'Registration Date',
 			'last_activity' => 'Last Activity',
 			'premium' => 'Premium',
 			'avatar' => 'Avatar',
-			'city_ptt' => 'City Ptt',
+			'city_ptt' => 'Mjesto stanovanja',
 			'email' => 'Email',
-			'phone' => 'Phone',
+			'phone' => 'Telefon',
 		);
 	}
 

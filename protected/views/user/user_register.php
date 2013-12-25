@@ -20,9 +20,13 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'city_ptt'); ?>
-		<?php echo $form->textField($model,'city_ptt'); ?>
-		<?php echo $form->error($model,'city_ptt'); ?>
+        <?php echo $form->labelEx($model,'city_ptt'); ?>
+        <?php
+        $list = CHtml::listData(City::model()->findAll(), 'ptt', 'name'); //table_col_name1 is value of option, table_col_name2 is label of option
+        // echo $form->dropDownList($model, 'product_type_id', $list);
+        echo CHtml::dropDownList('city_ptt', $model, $list);
+        ?>
+        <?php echo $form->error($model,'city_ptt'); ?>
 	</div>
 
 	<div class="row">
