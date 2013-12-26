@@ -167,9 +167,9 @@ class AdController extends Controller
 
     public function actionLista_oglasa()
     {
-        $adds = Ad::model()->findAll();
+        $ads = Ad::model()->findAllByAttributes(array('is_active' => 1));
         $this->render('lista',array(
-            'adds'=>$adds,
+            'ads'=>$ads,
         ));
     }
 }

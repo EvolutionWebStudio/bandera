@@ -32,7 +32,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'logout'),
+				'actions'=>array('create','update', 'logout', 'complete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -99,6 +99,31 @@ class UserController extends Controller
 		}
 
 		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+/**
+	 * Complete a particular model.
+	 * If complete is successful, the browser will be redirected to the 'index' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionComplete($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['User']))
+		{
+			$model->attributes=$_POST['User'];
+            $model->isComplete = 1;
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('complete',array(
 			'model'=>$model,
 		));
 	}
@@ -229,8 +254,13 @@ class UserController extends Controller
 
             if($model->validate())
             {
-                if($model->validate() && $model->login())
-                    $this->redirect($this->createUrl('site/index'));
+                if($model->validate() && $model->login()){
+                    if(User::model()->findByPk(Yii::app()->session['id'])->isComplete)
+                        $this->redirect($this->createUrl('site/index'));
+                    else
+                        $this->redirect($this->createUrl('user/complete/'.Yii::app()->session['id']));
+                }
+
             }
         }
         $this->render('user_login',array('model'=>$model));

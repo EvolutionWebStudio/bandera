@@ -16,6 +16,7 @@
  * @property string $email
  * @property string $phone
  * @property integer $user_roll_id
+ * @property integer $isComplete
  *
  * The followings are the available model relations:
  * @property City $cityPtt
@@ -40,16 +41,16 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, username, password, repeat_password', 'required'),
-			array('premium, city_ptt, user_roll_id', 'numerical', 'integerOnly'=>true),
+			array('email, username, password, repeat_password', 'required', 'on'=>'register'),
+			array('premium, city_ptt, user_roll_id, isComplete', 'numerical', 'integerOnly'=>true),
 			array('username, password', 'length', 'max'=>120),
 			array('name_surname', 'length', 'max'=>180),
 			array('avatar, email', 'length', 'max'=>255),
 			array('phone', 'length', 'max'=>45),
 			array('registration_date, last_activity', 'safe'),
             array('repeat_password', 'compare', 'compareAttribute'=>'password' ,'on'=>'register'),
-            array('email', 'unique', 'className' => 'User', 'attributeName' => 'email', 'message'=>'Nalog sa ovim email-om već postoji'),
-            array('username', 'unique', 'className' => 'User', 'attributeName' => 'username', 'message'=>'Ovo korisničko ime već postoji'),
+            array('email', 'unique', 'className' => 'User', 'attributeName' => 'email', 'message'=>'Nalog sa ovim email-om već postoji','on'=>'register'),
+            array('username', 'unique', 'className' => 'User', 'attributeName' => 'username', 'message'=>'Ovo korisničko ime već postoji','on'=>'register'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, username, password, name_surname, registration_date, last_activity, premium, avatar, city_ptt, email, phone, user_roll_id', 'safe', 'on'=>'search'),
@@ -121,6 +122,7 @@ class User extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('user_roll_id',$this->user_roll_id,true);
+		$criteria->compare('isComplete',$this->isComplete,true);
 
 
 		return new CActiveDataProvider($this, array(

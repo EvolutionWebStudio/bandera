@@ -11,23 +11,31 @@ $this->menu=array(
 	array('label'=>'Manage Ad', 'url'=>array('admin')),
 );
 ?>
-
 <div class="large-12 columns">
-    <form action="#" class="row panel">
-        <div class="large-4 columns">
-            <select name="city">
-                <option>Istocno Sarajevo</option>
-                <option>Banja Luka</option>
-                <option>Bijeljina</option>
-            </select>
-        </div>
+    <?php $form=$this->beginWidget('CActiveForm', array(
+        'id'=>'ad-form',
+                                                            
+        // Please note: When you enable ajax validation, make sure the corresponding
+        // controller action is handling ajax validation correctly.
+        // There is a call to performAjaxValidation() commented in generated controller code.
+        // See class documentation of CActiveForm for details on this.
+        'enableAjaxValidation'=>false,
+    )); ?>
+    <div class="large-4 columns">
+        <?php
+        $list = CHtml::listData(City::model()->findAll(), 'ptt', 'name'); //table_col_name1 is value of option, table_col_name2 is label of option
+        // echo $form->dropDownList($model, 'product_type_id', $list);
+        echo CHtml::dropDownList('User[city_ptt]', City::model(), $list);
+        ?>
+        <?php echo $form->error(City::model(),'city_ptt'); ?>
+    </div>
         <div class="large-1 columns">
-            <a href="#" class="button small postfix">Pretrazi</a>
+                <?php echo CHtml::submitButton('pretrazi',array('class' => 'button small postfix')); ?>
         </div>
         <div class="large-7 columns">
 
         </div>
-    </form>
+    <?php $this->endWidget(); ?>
 </div>
 
 <div class="main-content large-12 columns">
@@ -53,33 +61,21 @@ $this->menu=array(
         <section class="offers-list large-9 columns">
             <div class="row">
                 <div class="large-12 columns">
+                    <?php foreach($ads as $ad): ?>
                     <div class="offers-item clearfix">
                         <div class="item-thumbnail large-4 columns">
                             <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/empty.gif" alt=""/>
                         </div>
                         <div class="item-info large-6 columns">
-                            <h2 class="item-title">Naslov oglasa</h2>
-                            <P class="item-description">Opis oglasa, drzi ne daj</P>
+                            <h2 class="item-title"><?php echo $ad->title; ?></h2>
+                            <P class="item-description"><?php echo $ad->content; ?></P>
                         </div>
                         <div class="item-options large-2 columns">
-                            <div class="item-price">150 KM</div>
+                            <div class="item-price"><?php echo $ad->price; ?> KM</div>
                             <a class="button small" href="#">Pogledaj</a>
                         </div>
                     </div>
-
-                    <div class="offers-item clearfix">
-                        <div class="item-thumbnail large-4 columns">
-                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/empty.gif" alt=""/>
-                        </div>
-                        <div class="item-info large-6 columns">
-                            <h2 class="item-title">Naslov oglasa</h2>
-                            <P class="item-description">Opis oglasa, drzi ne daj</P>
-                        </div>
-                        <div class="item-options large-2 columns">
-                            <div class="item-price">150 KM</div>
-                            <a class="button small" href="#">Pogledaj</a>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
