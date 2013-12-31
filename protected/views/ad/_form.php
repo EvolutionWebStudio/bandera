@@ -67,11 +67,14 @@
 		<?php echo $form->error($model,'visits'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'city_ptt'); ?>
-		<?php echo $form->textField($model,'city_ptt'); ?>
-		<?php echo $form->error($model,'city_ptt'); ?>
-	</div>
+    <div class="row">
+        <?php echo $form->labelEx($model,'city_ptt'); ?>
+        <?php
+        $list = CHtml::listData(City::model()->findAll(), 'ptt', 'name');
+        echo CHtml::dropDownList('Ad[city_ptt]', $model, $list);
+        ?>
+        <?php echo $form->error($model,'city_ptt'); ?>
+    </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'options_id'); ?>

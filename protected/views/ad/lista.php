@@ -14,7 +14,8 @@ $this->menu=array(
 <div class="large-12 columns">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'ad-form',
-                                                            
+        'method' => 'GET',
+
         // Please note: When you enable ajax validation, make sure the corresponding
         // controller action is handling ajax validation correctly.
         // There is a call to performAjaxValidation() commented in generated controller code.
@@ -23,9 +24,8 @@ $this->menu=array(
     )); ?>
     <div class="large-4 columns">
         <?php
-        $list = CHtml::listData(City::model()->findAll(), 'ptt', 'name'); //table_col_name1 is value of option, table_col_name2 is label of option
-        // echo $form->dropDownList($model, 'product_type_id', $list);
-        echo CHtml::dropDownList('User[city_ptt]', City::model(), $list);
+        $list = CHtml::listData(City::model()->findAll(), 'ptt', 'name');
+        echo CHtml::dropDownList('ptt', City::model(), $list);
         ?>
         <?php echo $form->error(City::model(),'city_ptt'); ?>
     </div>

@@ -40,7 +40,7 @@ class Ad extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('city_ptt, options_id', 'required'),
+			array('city_ptt, title, address, price', 'required'),
 			array('is_active, visits, city_ptt, options_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>255),
 			array('latitude, longitude, address, price', 'length', 'max'=>45),

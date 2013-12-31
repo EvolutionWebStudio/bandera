@@ -36,6 +36,8 @@
                         <ul class="button-group">
                             <?php if(Yii::app()->session['id']): ?>
                             <li><?php echo CHtml::link('Odjavi se', array('user/logout'), array('class' => 'button small secondary')); ?></li>
+                            <li><?php echo CHtml::link('Dodaj oglas', array('ad/create'), array('class' => 'button small secondary')); ?></li>
+                            <li><?php echo CHtml::link('Profil', array('user/view/'.Yii::app()->session['id']), array('class' => 'button small secondary')); ?></li>
                             <?php else: ?>
                             <li><?php echo CHtml::link('Prijavi se', array('user/login'), array('class' => 'button small secondary')); ?></li>
                             <li><?php echo CHtml::link('Registruj se', array('user/register'), array('class' => 'button small')); ?></li>
