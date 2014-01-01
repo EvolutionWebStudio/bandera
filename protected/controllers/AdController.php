@@ -167,8 +167,18 @@ class AdController extends Controller
 
     public function actionLista_oglasa()
     {
-        $ads = Ad::model()->findAllByAttributes(array('is_active' => 1));
+        $model = new Ad('search');
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'is_active = 1';
+
+        if(isset($_GET['Ad'])){
+            $criteria->condition .= ' AND city_ptt = :ptt';
+            $criteria->params = array(':ptt' => $_GET['Ad']['city_ptt']);
+            $model->attributes = $_GET['Ad'];
+        }
+        $ads = $model->findAll($criteria);
         $this->render('lista',array(
+            'model' => $model,
             'ads'=>$ads,
         ));
     }

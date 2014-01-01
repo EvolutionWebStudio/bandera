@@ -13,21 +13,15 @@ $this->menu=array(
 ?>
 <div class="large-12 columns">
     <?php $form=$this->beginWidget('CActiveForm', array(
-        'id'=>'ad-form',
-        'method' => 'GET',
-
-        // Please note: When you enable ajax validation, make sure the corresponding
-        // controller action is handling ajax validation correctly.
-        // There is a call to performAjaxValidation() commented in generated controller code.
-        // See class documentation of CActiveForm for details on this.
-        'enableAjaxValidation'=>false,
+        'action'=>Yii::app()->createUrl($this->route),
+        'method'=>'get',
     )); ?>
     <div class="large-4 columns">
         <?php
         $list = CHtml::listData(City::model()->findAll(), 'ptt', 'name');
-        echo CHtml::dropDownList('ptt', City::model(), $list);
+        echo $form->dropDownList($model, 'city_ptt', $list);
         ?>
-        <?php echo $form->error(City::model(),'city_ptt'); ?>
+        <?php echo $form->error($model,'city_ptt'); ?>
     </div>
         <div class="large-1 columns">
                 <?php echo CHtml::submitButton('pretrazi',array('class' => 'button small postfix')); ?>
