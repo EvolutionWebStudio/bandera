@@ -25,26 +25,32 @@
 
         <div class="main-wrapper">
             <header class="main-header row">
-                <hgroup class="large-4 columns">
+                <div class="large-4 columns">
                     <h1 class="logo"><a href="<?php echo Yii::app()->request->baseUrl; ?>">Bandera</a></h1>
-                    <h2 class="slogan">smještaj za studente</h2>
-                </hgroup>
-                <div class="large-8 columns">
-                    <nav class="user-menu">
+                </div>
+                <nav class="large-8 columns">
+                    <div class="main-menu">
+                        <ul class="button-group">
+                            <li><?php echo CHtml::link('Lista oglasa', array('ad/lista_oglasa'), array('class' => 'button small secondary')); ?></li>
+                        </ul>
                         <ul class="button-group">
                             <?php if(Yii::app()->session['id']): ?>
                             <li><?php echo CHtml::link('Odjavi se', array('user/logout'), array('class' => 'button small secondary')); ?></li>
+                            <li><?php echo CHtml::link('Dodaj oglas', array('ad/create'), array('class' => 'button small secondary')); ?></li>
                             <li><?php echo CHtml::link('Profil', array('user/view/'.Yii::app()->session['id']), array('class' => 'button small secondary')); ?></li>
                             <?php else: ?>
                             <li><?php echo CHtml::link('Prijavi se', array('user/login'), array('class' => 'button small secondary')); ?></li>
-                            <li><?php echo CHtml::link('Registruj se', array('user/register'), array('class' => 'button small secondary')); ?></li>
+                            <li><?php echo CHtml::link('Registruj se', array('user/register'), array('class' => 'button small')); ?></li>
                             <?php endif; ?>
                         </ul>
-                    </nav>
-                </div>
+                    </div>
+
+                </nav>
             </header>
 
-            <?php echo $content; ?>
+            <div class="main-wrapper">
+                <?php echo $content; ?>
+            </div>
 
             <footer class="main-footer row">
                 <nav class="large-12 columns">

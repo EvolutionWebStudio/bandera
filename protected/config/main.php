@@ -8,6 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Bandera',
+    'defaultController' => 'ad/mapa_oglasa',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

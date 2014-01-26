@@ -22,7 +22,7 @@ class AdController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'lista_oglasa'),
+				'actions'=>array('index','view', 'lista_oglasa', 'mapa_oglasa'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -46,7 +46,7 @@ class AdController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'ad'=>$this->loadModel($id),
 		));
 	}
 
@@ -178,6 +178,24 @@ class AdController extends Controller
         }
         $ads = $model->findAll($criteria);
         $this->render('lista',array(
+            'model' => $model,
+            'ads'=>$ads,
+        ));
+    }
+
+    public function actionMapa_oglasa()
+    {
+        $model = new Ad('search');
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'is_active = 1';
+
+        if(isset($_GET['Ad'])){
+            $criteria->condition .= ' AND city_ptt = :ptt';
+            $criteria->params = array(':ptt' => $_GET['Ad']['city_ptt']);
+            $model->attributes = $_GET['Ad'];
+        }
+        $ads = $model->findAll($criteria);
+        $this->render('mapa',array(
             'model' => $model,
             'ads'=>$ads,
         ));

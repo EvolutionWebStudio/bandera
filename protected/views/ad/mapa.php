@@ -34,7 +34,7 @@ $this->menu=array(
         </div>
         <div class="large-8 columns">
             <nav class="main-menu">
-                <?php echo CHtml::link('Interaktivna mapa', array('ad/mapa_oglasa'), array('class' => 'button small secondary')); ?>
+                <?php echo CHtml::link('Lista oglasa', array('ad/lista_oglasa'), array('class' => 'button small secondary')); ?>
                 <?php echo CHtml::link('Dodaj oglas', array('ad/create'), array('class' => 'button small')); ?>
             </nav>
         </div>
@@ -55,31 +55,12 @@ $this->menu=array(
             <div class="offers-list large-9 columns">
                 <div class="row">
                     <div class="large-12 columns">
-                        <?php foreach($ads as $ad): ?>
-                        <article class="offers-item clearfix panel2">
-                            <div class="item-thumbnail large-4 columns">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/empty.gif" alt=""/>
-                            </div>
-                            <div class="item-info large-5 columns">
-                                <h2 class="item-title"><?php echo $ad->title; ?></h2>
-                                <P class="item-description"><?php echo $ad->content; ?></P>
-                            </div>
-                            <div class="item-options large-3 columns">
-                                <ul class="checkmark">
-                                    <li class="checked">Kupatilo</li>
-                                    <li class="unchecked">Rezije</li>
-                                    <li class="unchecked">Internet</li>
-                                    <li class="checked">Kuhinja</li>
-                                </ul>
-                                    <div class="item-price"><?php echo $ad->price; ?> KM</div>
-
-                                <?php echo Chtml::link('Pogledaj', array('ad/view?id='.$ad->id), array('class' => 'item-cta button')); ?>
-                            </div>
-                        </article>
-                        <?php endforeach; ?>
+                        <div class="main-map panel2" id="map"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<?php //Yii::app()->clientScript->registerScriptFile('http://maps.googleapis.com/maps/api/js?sensor=true', CClientScript::POS_END); ?>
