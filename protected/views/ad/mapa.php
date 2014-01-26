@@ -63,4 +63,5 @@ $this->menu=array(
     </div>
 </div>
 
-<?php //Yii::app()->clientScript->registerScriptFile('http://maps.googleapis.com/maps/api/js?sensor=true', CClientScript::POS_END); ?>
+<?php Yii::app()->clientScript->registerScriptFile('http://maps.googleapis.com/maps/api/js?sensor=true', CClientScript::POS_END); ?>
+<?php Yii::app()->clientScript->registerScript("defaultBigMap","embedMap('map', 43.866218, 17.325439, 7)"); ?>

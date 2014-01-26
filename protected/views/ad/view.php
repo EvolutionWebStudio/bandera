@@ -70,5 +70,5 @@
     </div>
 </div>
 
-<?php //Yii::app()->clientScript->registerScriptFile('http://maps.googleapis.com/maps/api/js?sensor=true', CClientScript::POS_END); ?>
-<?php //Yii::app()->clientScript->registerScript("embedMap('map', 43.866218, 17.325439, 7)"); ?>
+<?php Yii::app()->clientScript->registerScriptFile('http://maps.googleapis.com/maps/api/js?sensor=true', CClientScript::POS_END); ?>
+<?php Yii::app()->clientScript->registerScript("defaultSmallMap", "embedMap('map', 43.866218, 17.325439, 7)"); ?>
