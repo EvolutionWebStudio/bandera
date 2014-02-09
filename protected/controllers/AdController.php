@@ -64,6 +64,18 @@ class AdController extends Controller
 		if(isset($_POST['Ad']))
 		{
 			$model->attributes=$_POST['Ad'];
+            $model->start_date = date("Y-m-d h:m:s");
+            if(isset($_POST['Options'])){
+                $options = new Options();
+                $options->attributes = $_POST['Options'];
+                if($options->save())
+                {
+                    $model->options_id = $options->id;
+                }
+                else
+                    print_r($options);
+
+            }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

@@ -72,17 +72,17 @@ class Ad extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
+			'title' => 'Naslov oglasa',
 			'start_date' => 'Start Date',
-			'content' => 'Content',
-			'is_active' => 'Is Active',
+			'content' => 'Sadrzaj oglasa',
+			'is_active' => 'Objavljen',
 			'latitude' => 'Latitude',
 			'longitude' => 'Longitude',
-			'address' => 'Address',
+			'address' => 'Adresa',
 			'visits' => 'Visits',
-			'city_ptt' => 'City Ptt',
+			'city_ptt' => 'Grad',
 			'options_id' => 'Options',
-			'price' => 'Price',
+			'price' => 'Cijena',
 		);
 	}
 
