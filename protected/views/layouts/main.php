@@ -26,7 +26,7 @@
         <div class="main-wrapper">
             <header class="main-header row">
                 <hgroup class="large-4 columns">
-                    <h1 class="logo"><a href="<?php echo Yii::app()->request->baseUrl; ?>">Bandera</a></h1>
+                    <h1 class="logo"><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>">Bandera</a></h1>
                     <h2 class="slogan">smještaj za studente</h2>
                 </hgroup>
                 <div class="large-8 columns">

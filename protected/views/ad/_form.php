@@ -1,3 +1,5 @@
+<?php Yii::app()->clientScript->registerScriptFile('http://maps.googleapis.com/maps/api/js?sensor=true', CClientScript::POS_END); ?>
+<?php Yii::app()->clientScript->registerScriptFile('/js/ad/create.js', CClientScript::POS_END);?>
 <?php
 /* @var $this AdController */
 /* @var $model Ad */
@@ -134,9 +136,15 @@
             <input type="checkbox" name="Options[air_conditioning]" value="1">Klima<br />
         </div>
 	</div>
+
+    <div class="large-12 columns">
+        <div class="main-map panel2" id="map"></div>
+    </div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
+
 
 <?php $this->endWidget(); ?>
 

@@ -32,7 +32,7 @@ class CityController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','GetLocation'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -170,4 +170,11 @@ class CityController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function actionGetLocation($id){
+        $model=$this->loadModel($id);
+        $niz = array($model->latitude,$model->longitude,$model->zoom);
+        echo json_encode($niz);
+//        Yii::app()->close();
+    }
 }
