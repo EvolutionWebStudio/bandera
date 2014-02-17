@@ -22,7 +22,7 @@ class AdController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'lista_oglasa', 'mapa_oglasa'),
+				'actions'=>array('index','view', 'lista_oglasa', 'mapa_oglasa','GetLocation'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -211,5 +211,12 @@ class AdController extends Controller
             'model' => $model,
             'ads'=>$ads,
         ));
+    }
+
+    public function actionGetLocation($id){
+        $model=$this->loadModel($id);
+        $niz = array($model->latitude,$model->longitude,10);
+        echo json_encode($niz);
+//        Yii::app()->close();
     }
 }
